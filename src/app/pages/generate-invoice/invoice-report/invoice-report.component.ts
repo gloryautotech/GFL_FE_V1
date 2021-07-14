@@ -219,6 +219,8 @@ export class InvoiceReportComponent implements OnInit, OnDestroy {
   downLoadExcel(form) {
 
     if (form.valid) {
+      this.invoiceReportRequest.from = moment(this.invoiceReportRequest.from).format();
+      this.invoiceReportRequest.to = moment(this.invoiceReportRequest.to).format();
       this.invoiceService
         .getShortInvoiceReport(this.invoiceReportRequest)
         .pipe(takeUntil(this.destroy$)).subscribe(

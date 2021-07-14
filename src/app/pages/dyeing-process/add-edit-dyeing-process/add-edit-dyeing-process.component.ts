@@ -190,7 +190,7 @@ export class AddEditDyeingProcessComponent implements OnInit, OnDestroy {
   }
 
   addProcessStep() {
-    if (this.dyeingProcessSteps.length == 4) {
+    if (this.dyeingProcessSteps.length == 5) {
       this.toastr.warning("You are done with all the steps!");
     } else {
       const modalRef = this._modalService.open(AddDyeingProcessStepComponent, {
